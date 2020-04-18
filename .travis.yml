@@ -12,5 +12,3 @@ deploy:
     secure: YOUR_API_KEY_ENCRYPTED
   file: target/*.jar
   skip_cleanup: true
-  on:
-    tags: true
