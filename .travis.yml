@@ -6,3 +6,10 @@ before_install:
     pushd protobuf-2.5.0 && ./configure --prefix=/usr && make && sudo make install && popd && popd
 install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 script: mvn test -B
+deploy:
+  provider: releases
+  api_key: "GITHUB_TOKEN"
+  file: target/*.jar
+  skip_cleanup: true
+  on:
+    tags: true
