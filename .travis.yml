@@ -8,6 +8,9 @@ install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 script: mvn test -B
 deploy:
   provider: releases
-  api_key: "GITHUB_TOKEN"
+  api_key:
+    secure: YOUR_API_KEY_ENCRYPTED
   file: target/*.jar
   skip_cleanup: true
+  on:
+    tags: true
